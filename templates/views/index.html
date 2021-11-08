@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/bootstrap-filestyle.min.js"> </script>
+<script type="text/javascript" src="fileUpload.js"></script>
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<link rel="stylesheet" href="../../static/styles.css">
+
+<title>create a note</title>
+</head>
+<header>
+  <h1 class="text-light">🕵️‍♂️ private note 📝</h1>
+  <h2 class="text-light" align="center">burn on read</h2>
+</header>
+<body class="center">
+  <form method="POST" action="/createNote">
+    <div class="form-group" align="center">
+      <textarea class="my-5 " type="text" name="note" rows="10" cols="50" placeholder="               write your note here.." required></textarea>
+      <br>
+      <input class="btn btn-success" type="submit" value="create">
+    </div>
+  </form>
+  <div align="center">
+</div>
+</body>
+</html>

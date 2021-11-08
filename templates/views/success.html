@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/bootstrap-filestyle.min.js"> </script>
+<script type="text/javascript" src="fileUpload.js"></script>
+<link rel="stylesheet" href="../../static/styles.css">
+<title> success! </title>
+<script>
+  function myFunction() {
+    /* Get the text field */
+    var copyText = document.getElementById("link");
+    var copyBtn = document.getElementById("copyBtn");
+
+    /* Select the text field */
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
+    copyBtn.classList.remove("btn-danger");
+    copyBtn.classList.add("btn-success");
+    copyBtn.value = "copied!";
+
+  }
+
+</script>
+</head>
+
+<body class="center">
+  <div align="center">
+  <h1 class="text text-success"><b>success!</b></h1>
+  <textarea spellcheck="false" href="{{link}}" id="link" class="my-3 text text-dark" rows="2" cols="55">{{ link }}</textarea>
+  <br><br>
+  <input id="copyBtn" type="button" class="btn btn-light" value="copy" onclick="myFunction()"></input>
+  </div>
+</body>
+</html>
