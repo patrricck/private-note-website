@@ -21,15 +21,7 @@ noteDB = mydb["notes"]
 class privateNote:
     def __init__(self, note):
         self.note = note
-        self.id = self.generateId()
-
-    def generateId(self):
-        id = ''
-        chars = '123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-        for i in range(32):
-            id+=chars[random.randint(0, len(chars)-1)]
-
-        return id
+        self.id = ''.join([random.choice(string.ascii_letters + string.digits) for i in range(32)])
 
 
 def findNote(noteId):
